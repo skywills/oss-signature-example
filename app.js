@@ -70,7 +70,7 @@ function getAuthorization(req) {
 async function getToSignByte(req) {
   const body = await readAllData(req);
   console.log('body:', body)
-  const fullReqUrl = new URL(req.url, `http://${req.headers.host}`);
+  const fullReqUrl = new URL('/oss/post', `http://${req.headers.host}`);
   console.log('fullReqUrl:', fullReqUrl)
   return (
     decodeURIComponent(fullReqUrl.pathname) + fullReqUrl.search + "\n" + body
